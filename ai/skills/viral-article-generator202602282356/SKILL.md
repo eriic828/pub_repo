@@ -10,7 +10,6 @@ description: 公众号爆款文章生成器，为 AI+职场主题生成可直接
 生成文章并发布到公众号：
 
 ```bash
-
 python3 scripts/generate_article.py "AI 工具提升效率" --publish
 ```
 
@@ -19,7 +18,7 @@ python3 scripts/generate_article.py "AI 工具提升效率" --publish
 ```bash
 export DASHSCOPE_API_KEY=your_api_key           # 千问文生图
 export WECHAT_API_KEY=your_api_key              # 绿联 API（公众号发布）
-export GITHUB_TOKEN=your_token                 # GitHub Token（图片图床）
+
 ```
 
 ## 核心脚本
