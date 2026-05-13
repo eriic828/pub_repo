@@ -1,0 +1,344 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+GitHub 图片上传脚本
+将图片上传到 GitHub 仓库作为图床使用
+"""
+
+import base64
+import os
+import subprocess
+import time
+from pathlib import Path
+from typing import Optional, List
+
+import requests
+from github import Github
+from github.GithubException import GithubException
+
+
+class GitHubImageUploader:
+    """GitHub 图片上传器"""
+
+    @staticmethod
+    def _get_env_from_shell(var_name: str) -> Optional[str]:
+        """从环境变量获取值
+
+        Args:
+            var_name: 环境变量名称
+
+        Returns:
+            环境变量值，不存在则返回 None
+
+        说明：
+            由于脚本从 zsh 终端运行，会自动继承 .zshrc 中配置的环境变量
+            直接使用 os.getenv 即可获取
+        """
+        value = os.getenv(var_name)
+        if value and value.strip():
+            return value.strip()
+        return None
+
+    def __init__(self, token: Optional[str] = None, repo: Optional[str] = None, branch: str = "main"):
+        """初始化上传器
+
+        Args:
+            token: GitHub Token，默认从 shell 环境变量读取
+            repo: GitHub 仓库格式：username/repo，默认从环境变量读取
+            branch: 分支名称，默认 main
+        """
+        self.token = token or self._get_env_from_shell("GITHUB_TOKEN")
+        repo_str = repo or self._get_env_from_shell("GITHUB_REPO") or "prepared48/skillImages567"
+        self.branch = branch
+
+        if not self.token:
+            raise ValueError("请设置 GITHUB_TOKEN 环境变量（可在 ~/.zshrc 中添加: export GITHUB_TOKEN=your_token）")
+
+        # 解析仓库信息
+        self.repo_name = repo_str
+
+        # 初始化 GitHub 客户端
+        self.github = Github(self.token)
+        self.repo = self.github.get_repo(self.repo_name)
+
+    def _verify_github_url(self, url: str, max_retries: int = 3, retry_delay: int = 5) -> bool:
+        """验证 GitHub 图片 URL 是否可访问
+
+        Args:
+            url: GitHub 图片 URL
+            max_retries: 最大重试次数
+            retry_delay: 重试延迟（秒）
+
+        Returns:
+            URL 是否可访问
+        """
+        print(f"🔍 验证 GitHub URL: {url}")
+
+        for attempt in range(max_retries):
+            try:
+                # 等待 GitHub 处理文件（首次创建可能需要几秒）
+                if attempt > 0:
+                    print(f"⏳ 等待 {retry_delay} 秒后重试 ({attempt + 1}/{max_retries})...")
+                    time.sleep(retry_delay)
+
+                response = requests.get(url, timeout=30)
+                if response.status_code == 200:
+                    content_length = len(response.content)
+                    print(f"✅ URL 验证成功，图片大小: {content_length} 字节")
+                    return True
+                else:
+                    print(f"⚠️  URL 返回状态码: {response.status_code}")
+
+            except requests.exceptions.Timeout:
+                print(f"⏱️  超时 ({attempt + 1}/{max_retries})")
+            except Exception as e:
+                print(f"❌ 验证失败 ({attempt + 1}/{max_retries}): {e}")
+
+        print(f"❌ GitHub URL 验证失败，但文件已上传")
+        return False
+
+    def _download_image(self, image_url: str) -> bytes:
+        """下载图片
+
+        Args:
+            image_url: 图片 URL
+
+        Returns:
+            图片二进制数据
+        """
+        response = requests.get(image_url, timeout=30)
+        response.raise_for_status()
+        return response.content
+
+    def _generate_filename(self, prefix: str = "img") -> str:
+        """生成唯一文件名
+
+        Args:
+            prefix: 文件名前缀
+
+        Returns:
+            唯一文件名
+        """
+        timestamp = int(time.time())
+        # 生成短哈希避免文件名过长
+        hash_part = base64.b64encode(os.urandom(4)).decode("utf-8")[:6]
+        return f"{prefix}_{timestamp}_{hash_part}.png"
+
+    def _get_subfolder(self) -> str:
+        """根据日期获取子文件夹路径
+
+        Returns:
+            子文件夹路径，如：wechat-articles/
+        """
+        return "wechat-articles/"
+
+    def upload_from_url(self, image_url: str, prefix: str = "img", verify: bool = True) -> str:
+        """从 URL 下载并上传图片到 GitHub
+
+        Args:
+            image_url: 图片 URL
+            prefix: 文件名前缀
+            verify: 是否验证上传后的 URL
+
+        Returns:
+            GitHub 图片 URL
+
+        Raises:
+            GithubException: 上传失败时抛出
+            requests.RequestException: 下载失败时抛出
+        """
+        print(f"📥 下载图片: {image_url}")
+
+        # 下载图片
+        image_data = self._download_image(image_url)
+
+        # 编码为 base64
+        encoded_data = base64.b64encode(image_data).decode("utf-8")
+
+        # 生成文件名和路径
+        filename = self._generate_filename(prefix)
+        folder = self._get_subfolder()
+        full_path = folder + filename
+
+        print(f"📤 上传到 GitHub: {full_path}")
+
+        try:
+            # 检查文件是否已存在
+            try:
+                self.repo.get_contents(full_path, ref=self.branch)
+                print(f"⚠️  文件已存在，使用时间戳更新")
+                # 添加新的时间戳避免覆盖
+                timestamp = int(time.time() + len(encoded_data))
+                hash_part = base64.b64encode(os.urandom(4)).decode("utf-8")[:6]
+                filename = f"{prefix}_{timestamp}_{hash_part}.png"
+                full_path = folder + filename
+            except:
+                # 文件不存在，继续创建
+                pass
+
+            # 创建文件
+            message = f"Upload image: {filename}"
+            self.repo.create_file(
+                path=full_path,
+                message=message,
+                content=encoded_data,
+                branch=self.branch
+            )
+
+            # 返回 GitHub 图片 URL
+            github_url = f"https://raw.githubusercontent.com/{self.repo_name}/{self.branch}/{full_path}"
+            print(f"✅ 上传成功: {github_url}")
+
+            # 验证 URL 是否可访问
+            if verify:
+                self._verify_github_url(github_url)
+
+            return github_url
+
+        except GithubException as e:
+            print(f"❌ 上传失败: {e}")
+            raise
+
+    def upload_from_url_batch(self, image_urls: List[str], prefix: str = "img", verify: bool = True) -> List[str]:
+        """批量上传图片到 GitHub
+
+        Args:
+            image_urls: 图片 URL 列表
+            prefix: 文件名前缀
+            verify: 是否验证上传后的 URL
+
+        Returns:
+            GitHub 图片 URL 列表
+        """
+        github_urls = []
+        for i, url in enumerate(image_urls, 1):
+            print(f"\n[{i}/{len(image_urls)}] 处理图片...")
+            try:
+                github_url = self.upload_from_url(url, prefix, verify=verify)
+                github_urls.append(github_url)
+            except Exception as e:
+                print(f"❌ 图片 {i} 上传失败: {e}")
+                # 使用原始 URL 作为后备
+                github_urls.append(url)
+
+        return github_urls
+
+    def upload_local_file(self, file_path: str, filename: Optional[str] = None, verify: bool = True) -> str:
+        """上传本地文件到 GitHub
+
+        Args:
+            file_path: 本地文件路径
+            filename: 自定义文件名，不指定则自动生成
+            verify: 是否验证上传后的 URL
+
+        Returns:
+            GitHub 图片 URL
+        """
+        path = Path(file_path)
+        if not path.exists():
+            raise FileNotFoundError(f"文件不存在: {file_path}")
+
+        # 读取文件
+        with open(path, "rb") as f:
+            image_data = f.read()
+
+        # 编码为 base64
+        encoded_data = base64.b64encode(image_data).decode("utf-8")
+
+        # 生成文件名和路径
+        if filename is None:
+            filename = self._generate_filename()
+        folder = self._get_subfolder()
+        full_path = folder + filename
+
+        print(f"📤 上传文件: {full_path}")
+
+        # 创建文件
+        message = f"Upload image: {filename}"
+        self.repo.create_file(
+            path=full_path,
+            message=message,
+            content=encoded_data,
+            branch=self.branch
+        )
+
+        # 返回 GitHub 图片 URL
+        github_url = f"https://raw.githubusercontent.com/{self.repo_name}/{self.branch}/{full_path}"
+        print(f"✅ 上传成功: {github_url}")
+
+        # 验证 URL 是否可访问
+        if verify:
+            self._verify_github_url(github_url)
+
+        return github_url
+
+
+def main():
+    """命令行入口"""
+    import argparse
+    import sys
+
+    parser = argparse.ArgumentParser(description="上传图片到 GitHub")
+    parser.add_argument("image_url", nargs="?", help="图片 URL")
+    parser.add_argument("--file", help="本地文件路径")
+    parser.add_argument("--prefix", default="img", help="文件名前缀（默认: img）")
+    parser.add_argument("--batch", action="store_true", help="批量上传模式")
+    parser.add_argument("--no-verify", action="store_true", help="跳过 URL 验证")
+    parser.add_argument("--token", help="GitHub Token（默认从环境变量读取）")
+    parser.add_argument("--repo", help="GitHub 仓库（默认: prepared48/skillImages567）")
+
+    args = parser.parse_args()
+
+    # 创建上传器
+    try:
+        uploader = GitHubImageUploader(
+            token=args.token,
+            repo=args.repo
+        )
+    except ValueError as e:
+        print(f"❌ 错误: {e}")
+        sys.exit(1)
+
+    verify = not args.no_verify
+
+    # 处理上传
+    if args.file:
+        # 上传本地文件
+        github_url = uploader.upload_local_file(args.file, verify=verify)
+        print(f"\n🔗 GitHub URL: {github_url}")
+    elif args.image_url:
+        # 上传 URL 图片
+        if args.batch:
+            # 批量上传（从文件读取）
+            urls = args.image_url.split()
+            github_urls = uploader.upload_from_url_batch(urls, args.prefix, verify=verify)
+            print(f"\n🔗 GitHub URLs:")
+            for url in github_urls:
+                print(f"  - {url}")
+        else:
+            # 单个上传
+            github_url = uploader.upload_from_url(args.image_url, args.prefix, verify=verify)
+            print(f"\n🔗 GitHub URL: {github_url}")
+    else:
+        # 交互式模式
+        print("请选择上传方式:")
+        print("1. 输入图片 URL")
+        print("2. 上传本地文件")
+
+        choice = input("\n请输入选项 (1/2): ").strip()
+
+        if choice == "1":
+            url = input("请输入图片 URL: ").strip()
+            github_url = uploader.upload_from_url(url, verify=verify)
+            print(f"\n🔗 GitHub URL: {github_url}")
+        elif choice == "2":
+            file_path = input("请输入文件路径: ").strip()
+            github_url = uploader.upload_local_file(file_path, verify=verify)
+            print(f"\n🔗 GitHub URL: {github_url}")
+        else:
+            print("❌ 无效的选项")
+            sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

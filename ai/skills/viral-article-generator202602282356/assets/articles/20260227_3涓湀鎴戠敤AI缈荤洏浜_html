@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公众号文章</title>
+</head>
+<body>
+    <div style="
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            padding: 0 15px;
+        ">
+        <p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">用 AI 3 个月，我从一个普通职场人变成了团队leader。</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">这 3 个方法，让你也能在 AI 时代弯道超车。</p>
+<h2 style="
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        ">之前的状态</h2>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">每次看到 AI 相关的消息，心里都慌：</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">• 看别人用 AI 做项目，效率翻倍，自己不知道怎么开始</p><p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">• 想学 AI，但工具太多，不知道从哪个下手</p><p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">• 试试这个工具，又试试那个，浪费大量时间还没学到东西</p><p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">• 担心 AI 会取代自己，干脆放弃学习</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">结果就是，AI 飞速发展，你还在原地踏步。</p>
+<h2 style="
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        ">核心观点</h2>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><p style="text-align: center; margin: 20px 0;"><img src="https://raw.githubusercontent.com/prepared48/skillImages567/refs/heads/main/wechat-articles/1769827947_ea25f27d.png"/></p></p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><strong style="
+            color: #333;
+            font-weight: bold;
+        ">AI 不是取代你，而是放大你。</strong></p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">这不是鸡汤，是正在发生的现实。</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">2024 年，AI 辅助工具使用率增长了 300%，但真正用好的不到 20%。</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">差距不在工具，而在学习方法。</p>
+<h2 style="
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        ">核心方法</h2>
+<h3 style="
+            color: #800000;
+            font-size: 17px;
+            font-weight: bold;
+            margin: 20px 0 15px 0;
+            padding-bottom: 10px;
+        ">方法一：从最小场景开始，快速建立信心</h3>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">别一上来就想解决所有问题，从最小场景开始。</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><p style="text-align: center; margin: 20px 0;"><img src="https://dashscope-result-sh.oss-cn-shanghai.aliyuncs.com/7d/b4/20260228/d23adf3d/842e2c00-b99b-48f5-a6ed-de1dc40017882544782922.png?Expires=1772815057&OSSAccessKeyId=LTAI5tKPD3TMqf2Lna1fASuh&Signature=FPh%2F6Xa7nHJNbMs7WV6ISc%2Fs4Hw%3D"/></p></p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">用 AI 提升效率，具体这样操作：</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><span style="font-weight: bold;">1. </span>选一个你每天都要做的任务，比如"写周报""回复邮件""做PPT"</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><span style="font-weight: bold;">2. </span>找一个简单的 AI 工具（比如 ChatGPT、Claude、WPS AI）</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><span style="font-weight: bold;">3. </span>给 AI 一个清晰的提示词："帮我写一份周报，本周完成了..."</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><span style="font-weight: bold;">4. </span>对比 AI 生成的内容，手动微调 5-10 分钟</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><strong style="
+            color: #333;
+            font-weight: bold;
+        color: #333; font-weight: bold;">效果</strong>：1 周内从 0 到 1，快速建立信心</p>
+<blockquote style="
+            border-left: 4px solid #ddd;
+            background-color: #f9f9f9;
+            padding: 15px 20px;
+            margin: 20px 0;
+            color: #666;
+            font-size: 15px;
+        ">
+<p style="
+            color: #555;
+            font-size: 16px;
+            
+            line-height: 1.8;
+            text-align: justify;
+        ">真实案例：<br/>
+我之前不知道怎么开始，花了 1 个月各种工具都没学会。后来就从"写周报"开始，用 Claude 一周搞定。现在每次用都有正反馈，信心越来越强。</p>
+</blockquote>
+<h3 style="
+            color: #800000;
+            font-size: 17px;
+            font-weight: bold;
+            margin: 20px 0 15px 0;
+            padding-bottom: 10px;
+        ">方法二：建立自己的 AI 工具库，而非盲目尝试</h3>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><p style="text-align: center; margin: 20px 0;"><img src="https://dashscope-result-sh.oss-cn-shanghai.aliyuncs.com/7d/b4/20260228/d23adf3d/842e2c00-b99b-48f5-a6ed-de1dc40017882544782922.png?Expires=1772815057&OSSAccessKeyId=LTAI5tKPD3TMqf2Lna1fASuh&Signature=R%2FeT5zL3kHhR9qzBZlS%2BZ5T5mVj2K2Z5e9h3sV%3D"/></p></p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">不要什么都从头开始，建立自己的工具库。</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">建立工具库，具体这样操作：</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><span style="font-weight: bold;">1. </span>记录你的工作场景：比如"写作""数据分析""设计""代码""会议"</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><span style="font-weight: bold;">2. </span>给 AI："针对这些场景，推荐最适合的 AI 工具，并说明理由"</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><span style="font-weight: bold;">3. </span>记录每个场景的提示词模板："写作用这个提示""分析用这个提示"</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><span style="font-weight: bold;">4. </span>建立一个文档，持续更新你的工具库和提示词</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><strong style="
+            color: #333;
+            font-weight: bold;
+        color: #333; font-weight: bold;">效果</strong>：效率提升 3 倍，不再盲目尝试</p>
+<blockquote style="
+            border-left: 4px solid #ddd;
+            background-color: #f9f9f9;
+            padding: 15px 20px;
+            margin: 20px 0;
+            color: #666;
+            font-size: 15px;
+        ">
+<p style="
+            color: #555;
+            font-size: 16px;
+            
+            line-height: 1.8;
+            text-align: justify;
+        ">真实案例：<br/>
+之前每次都重新发明轮子，浪费大量时间。现在建立了工具库，写作用 Claude，分析用 ChatGPT，设计用 Midjourney。工具一用，效率直接起飞。</p>
+</blockquote>
+<h3 style="
+            color: #800000;
+            font-size: 17px;
+            font-weight: bold;
+            margin: 20px 0 15px 0;
+            padding-bottom: 10px;
+        ">方法三：持续优化提示词，而非一劳永逸</h3>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><p style="text-align: center; margin: 20px 0;"><img src="https://dashscope-result-sh.oss-cn-shanghai.aliyuncs.com/7d/5c/20260228/d23adf3d/cd0505fc-fba2-4f27-a5aa-17205131147a1664818867.png?Expires=1772815104&OSSAccessKeyId=LTAI5tKPD3TMqf2Lna1fASuh&Signature=KZlTq2r3wC4N4%2FcPz9%2FJw7X7%2FdHJj3b7x2FkzA%2Bz5T5mVj2K2Z5e9h3sV%3D"/></p></p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">AI 的威力在于提示词，持续优化才能越用越好。</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">优化提示词，具体这样操作：</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><span style="font-weight: bold;">1. </span>记录每次使用 AI 的场景和结果</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><span style="font-weight: bold;">2. </span>分析哪些提示词效果好，哪些需要改进</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><span style="font-weight: bold;">3. </span>定期（每周）优化你的提示词库</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><span style="font-weight: bold;">4. </span>用 AI 帮你优化："帮我改进这个提示词，让它更准确"</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><strong style="
+            color: #333;
+            font-weight: bold;
+        color: #333; font-weight: bold;">效果</strong>：AI 效果提升 5 倍，从会用到用得好</p>
+<blockquote style="
+            border-left: 4px solid #ddd;
+            background-color: #f9f9f9;
+            padding: 15px 20px;
+            margin: 20px 0;
+            color: #666;
+            font-size: 15px;
+        ">
+<p style="
+            color: #555;
+            font-size: 16px;
+            
+            line-height: 1.8;
+            text-align: justify;
+        ">真实案例：<br/>
+我刚开始用 AI 写作，效果一般。后来持续优化提示词，现在生成的质量比我手写的还好。上周用 AI 写的方案，老板直接采纳。</p>
+</blockquote>
+<h2 style="
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        ">今天就可以开始</h2>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><p style="text-align: center; margin: 20px 0;"><img src=""/></p></p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">别等明天，现在就试试这 3 步：</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><strong style="
+            color: #333;
+            font-weight: bold;
+        color: #333; font-weight: bold;">第一步</strong>：选一个你每天都要做的任务（比如写邮件、做PPT）</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><strong style="
+            color: #333;
+            font-weight: bold;
+        color: #333; font-weight: bold;">第二步</strong>：注册一个 AI 工具（ChatGPT、Claude 都可以）</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><strong style="
+            color: #333;
+            font-weight: bold;
+        color: #333; font-weight: bold;">第三步</strong>：给 AI 一个简单明确的指令，完成任务</p>
+<h2 style="
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        ">关键提醒</h2>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">AI 时代，不是工具多就好用，而是要用得好。记住这 3 个原则：</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">• <strong style="
+            color: #333;
+            font-weight: bold;
+        color: #333; font-weight: bold;">从小场景开始</strong>：别一上来就想解决所有问题，从最小场景建立信心</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">• <strong style="
+            color: #333;
+            font-weight: bold;
+        color: #333; font-weight: bold;">建立工具库</strong>：不要每次都重新发明轮子，建立自己的工具库和提示词</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">• <strong style="
+            color: #333;
+            font-weight: bold;
+        color: #333; font-weight: bold;">持续优化提示词</strong>：AI 的威力在于提示词，持续优化才能越用越好</p>
+<hr style="
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 30px 0;
+        "/>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        "><strong style="
+            color: #333;
+            font-weight: bold;
+        color: #333; font-weight: bold;">写在最后</strong></p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">3 个月前，我还在为 AI 焦虑。现在，AI 是我最得力的助手。</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">这不是因为我多聪明，而是因为我找到了正确的方法。</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">从今天开始，用 AI 放大你的能力。</p>
+<hr style="
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 30px 0;
+        "/>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">你觉得 AI 最大的价值是什么？欢迎在评论区分享你的使用心得。</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">如果这篇文章对你有帮助，<strong style="
+            color: #333;
+            font-weight: bold;
+        color: #333; font-weight: bold;">点赞、在看、转发</strong>三连，让更多人看到 AI 的力量。</p>
+<p style="
+            color: #555;
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+        ">下期我会分享《AI 提示词大全，100 个场景直接用》，关注我不错过。</p>
+    </div>
+</body>
+</html>
