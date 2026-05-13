@@ -10,7 +10,7 @@ description: 公众号爆款文章生成器，为 AI+职场主题生成可直接
 生成文章并发布到公众号：
 
 ```bash
-export GITHUB_TOKEN=
+
 python3 scripts/generate_article.py "AI 工具提升效率" --publish
 ```
 
